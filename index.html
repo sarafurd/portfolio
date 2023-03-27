@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+</head>
+
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="sara rutherfurd (2).jpg" alt="">
+                <ul id="sidemenu">
+                    <li><a href="">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fas fa-times" onclick="closemenu()"></i>
+                </ul>
+                <i class="fas fa-bars" onclick="openmenu()"></i>
+            </nav>
+        </div>
+
+        <div class="header-text">
+            <h1>Sara Rutherfurd </h1>
+            <p>Software Engineer</p>
+        </div>
+    </div>
+
+    <!-- About -->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="Profile headshot (400x400).jpg" alt="linkedin-pic">
+                </div>
+                <div class="about-col-2">
+                    <h2 class="sub-title">About Me</h2>
+                    <p>Hi, and welcome to my portfolio! My name is Sara Rutherfurd, and I am a software engineer based in Irvine, CA. I graduated from California State University Fullerton in January 2023 with a BSc in Computer Science and a GPA of 3.4.
+                        Overall, my coursework at CSUF provided me with a well-rounded education in computer science, with a particular emphasis on software engineering. My journey in software engineering began with the hands-on experience I gained while
+                        working on various software projects for my university classes. Since graduating, I have been honing my skills in front-end web development, which has become my primary focus. I am currently working on various side projects to
+                        further develop my skills and pursue my interests. I believe in continuous learning and improvement, and I am always seeking new challenges to broaden my horizons. In my free time, I enjoy walking, anime, and spending time with
+                        my family, friends, and pets. Thank you for taking the time to visit my portfolio, and I hope you enjoy exploring my projects and learning more about me as a software engineer.
+                    </p>
+
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links " onclick="opentab('education')">Education</p>
+                    </div>
+
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>Software Engineer</span></li>
+                            <li><span>Web Developement</span> <br>Web App Development</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2015</span><br>High School Diploma from Irvine High</li>
+                            <li><span>2023</span><br>BS from Cal State Fullerton</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="projects">
+        <div class="container">
+            <h1 class="sub-title">Projects</h1>
+            <div class="work-list">
+                <div class="work">
+                    <img src="project1.png" id="project1 ">
+                    <div class="layer ">
+                        <h3>To Do list</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate quas fugit velit, corporis nam enim odit sequi accusamus dolores voluptatum at incidunt ab, est soluta? Temporibus quia sequi eos quasi?</p>
+                        <a href="https://todolist-alpha-virid.vercel.app/"><i class="fas fa-external-link-alt " ></i></a>
+                    </div>
+                </div>
+                <div class="work ">
+                    <img src="project1.png" id="project2 ">
+                    <div class="layer ">
+                        <h3>Purrfect Cat Cafe</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate quas fugit velit, corporis nam enim odit sequi accusamus dolores voluptatum at incidunt ab, est soluta? Temporibus quia sequi eos quasi?</p>
+                        <a href="https://catcafewireframe.vercel.app/"><i class="fas fa-external-link-alt " ></i></a>
+                    </div>
+                </div>
+                <div class="work ">
+                    <img src="project1.png" id="project3">
+                    <div class="layer ">
+                        <h3>To Do list</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate quas fugit velit, corporis nam enim odit sequi accusamus dolores voluptatum at incidunt ab, est soluta? Temporibus quia sequi eos quasi?</p>
+                        <a href="# "><i class="fas fa-external-link-alt " ></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="js/main.js"></script>
+    <!-- contact -->
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p><i class="fas fa-paper-plane"></i>sruthfd@gmail.com</p>
+                    <p><i class="fas fa-phone"></i>(949)-836-5235</p>
+                    <div class="social-icons">
+                        <a href="https://twitter.com/sararrdev"><i class="fab fa-twitter-square"></i></a>
+                        <a href="https://www.linkedin.com/in/sara-rutherfurd/"><i class="fab fa-linkedin"></i></a>
+                        <a href=""><i class="fab fa-github"></i></a>
+                    </div>
+                    <a href="#" class="btn btn2">Download CV</a>
+                </div>
+                <div class="contact-right">
+                    <form>
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn btn2">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
