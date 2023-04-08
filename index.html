@@ -77,7 +77,7 @@
                     <img src="project1.png" id="project1">
                     <div class="layer">
                         <h3>Anime Quotes</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate quas fugit velit, corporis nam enim odit sequi accusamus dolores voluptatum at incidunt ab, est soluta? Temporibus quia sequi eos quasi?</p>
+                        <p>HTML,CSS, JavaScript app that searches and displays data from the AnimeChan API.</p>
                         <a href="https://animequotessrr.netlify.app"><i class="fas fa-external-link-alt " ></i></a>
                     </div>
                 </div>
@@ -85,7 +85,7 @@
                     <img src="project2.png" id="project2">
                     <div class="layer">
                         <h3>Purrfect Cat Cafe</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate quas fugit velit, corporis nam enim odit sequi accusamus dolores voluptatum at incidunt ab, est soluta? Temporibus quia sequi eos quasi?</p>
+                        <p>HTML, CSS, layout of a ficitious small business.</p>
                         <a href="https://catcafelayout.netlify.app"><i class="fas fa-external-link-alt " ></i></a>
                     </div>
                 </div>
@@ -93,7 +93,7 @@
                     <img src="project3.png" id="project3">
                     <div class="layer">
                         <h3>Front-end Todo list</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate quas fugit velit, corporis nam enim odit sequi accusamus dolores voluptatum at incidunt ab, est soluta? Temporibus quia sequi eos quasi?</p>
+                        <p>HTML, CSS, JavaScript front-end To Do List app.</p>
                         <a href="https://todolistsrr.netlify.app"><i class="fas fa-external-link-alt " ></i></a>
                     </div>
                 </div>
@@ -101,7 +101,7 @@
         </div>
 
     </div>
-    <script src="js/main.js"></script>
+
     <!-- contact -->
     <div id="contact">
         <div class="container">
@@ -115,12 +115,11 @@
                         <a href="https://www.linkedin.com/in/sara-rutherfurd/"><i class="fab fa-linkedin"></i></a>
                         <a href="https://github.com/sarafurd"><i class="fab fa-github"></i></a>
                     </div>
-                    <a href="#" class="btn btn2">Download CV</a>
                 </div>
                 <div class="contact-right">
-                    <form>
+                    <form name="submit-to-google-sheet">
                         <input type="text" name="Name" placeholder="Your Name" required>
-                        <input type="email" name="email" placeholder="Your Email" required>
+                        <input type="email" name="Email" placeholder="Your Email" required>
                         <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
                         <button type="submit" class="btn btn2">Submit</button>
                     </form>
@@ -128,6 +127,22 @@
             </div>
         </div>
     </div>
+
+    <script src="js/main.js"></script>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbz-WU9XNT8Lvbezu9T_apdJZHVGZnqEaon96w2tqdfGc_BWON7PknqH2dRVJ6TOv6ws/exec'
+        const form = document.forms['submit-to-google-sheet']
+
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, {
+                    method: 'POST',
+                    body: new FormData(form)
+                })
+                .then(response => console.log('Success!', response))
+                .catch(error => console.error('Error!', error.message))
+        })
+    </script>
 
 </body>
 

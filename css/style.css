@@ -287,11 +287,6 @@ nav ul li a:hover::after {
     transform: translateY(-5px);
 }
 
-.btn.btn2 {
-    display: inline-block;
-    background: #C5B4E3;
-}
-
 .contact-right form {
     width: 100%;
 }
