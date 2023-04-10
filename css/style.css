@@ -299,7 +299,7 @@ form textarea {
     background: #DDDBCB;
     padding: 15px;
     margin: 15px 0;
-    color: white;
+    color: black;
     font-size: 18px;
     border-radius: 6px;
 }
@@ -309,7 +309,8 @@ form .btn2 {
     font-size: 18px;
     margin-top: 20px;
     cursor: pointer;
-    background: #DDDBCB;
+    background: #FFFF00;
+    color: black;
 }
 
 

@@ -16,7 +16,6 @@
             <nav>
                 <img src="sara rutherfurd.jpg" alt="">
                 <ul id="sidemenu">
-                    <li><a href="">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#contact">Contact</a></li>
@@ -41,11 +40,9 @@
                 </div>
                 <div class="about-col-2">
                     <h2 class="sub-title">About Me</h2>
-                    <p>Hi, and welcome to my portfolio! My name is Sara Rutherfurd, and I am a software engineer based in Irvine, CA. I graduated from California State University Fullerton in January 2023 with a BSc in Computer Science and a GPA of 3.4.
-                        Overall, my coursework at CSUF provided me with a well-rounded education in computer science, with a particular emphasis on software engineering. My journey in software engineering began with the hands-on experience I gained while
-                        working on various software projects for my university classes. Since graduating, I have been honing my skills in front-end web development, which has become my primary focus. I am currently working on various side projects to
-                        further develop my skills and pursue my interests. I believe in continuous learning and improvement, and I am always seeking new challenges to broaden my horizons. In my free time, I enjoy walking, anime, and spending time with
-                        my family, friends, and pets. Thank you for taking the time to visit my portfolio, and I hope you enjoy exploring my projects and learning more about me as a software engineer.
+                    <p>Hi! My name is Sara Rutherfurd, and I am a software engineer based in Irvine, California. I graduated from California State University Fullerton with a BSc in Computer Science and a GPA of 3.4. My coursework at CSUF provided me with
+                        a well-rounded education in computer science and a particular emphasis on software engineering. Since graduating, front-end web development using HTML, CSS, and Javascript is my primary focus. In my free time, I enjoy walking,
+                        anime, and exploring new restaurants. Thank you for taking the time to visit my portfolio.
                     </p>
 
                     <div class="tab-titles">
@@ -55,14 +52,16 @@
 
                     <div class="tab-contents active-tab" id="skills">
                         <ul>
-                            <li><span>Software Engineer</span></li>
-                            <li><span>Web Development</span></li>
+                            <li><span>HTML</span></li>
+                            <li><span>CSS</span></li>
+                            <li><span>JavaScript</span></li>
+                            <li><span>C++</span></li>
+                            <li><span>Python</span></li>
                         </ul>
                     </div>
                     <div class="tab-contents" id="education">
                         <ul>
-                            <li><span>2015</span><br>High School Diploma from Irvine High</li>
-                            <li><span>2023</span><br>Bachelor of Science from Cal State Fullerton</li>
+                            <li>Bachelor of Science from California State University of Fullerton</li>
                         </ul>
                     </div>
                 </div>
@@ -85,7 +84,7 @@
                     <img src="project2.png" id="project2">
                     <div class="layer">
                         <h3>Purrfect Cat Cafe</h3>
-                        <p>HTML, CSS, layout of a ficitious small business.</p>
+                        <p>HTML, CSS layout of a ficitious small business.</p>
                         <a href="https://catcafelayout.netlify.app"><i class="fas fa-external-link-alt " ></i></a>
                     </div>
                 </div>
@@ -108,8 +107,6 @@
             <div class="row">
                 <div class="contact-left">
                     <h1 class="sub-title">Contact Me</h1>
-                    <p><i class="fas fa-paper-plane"></i>sruthfd@gmail.com</p>
-                    <p><i class="fas fa-phone"></i>(949)-836-5235</p>
                     <div class="social-icons">
                         <a href="https://twitter.com/sararrdev"><i class="fab fa-twitter-square"></i></a>
                         <a href="https://www.linkedin.com/in/sara-rutherfurd/"><i class="fab fa-linkedin"></i></a>
@@ -117,12 +114,14 @@
                     </div>
                 </div>
                 <div class="contact-right">
+                    <div id="success-message" style="display:none; background-color:#4CAF50; color:white; padding:10px; border-radius:5px; text-align:center;">Form submitted successfully!</div>
                     <form name="submit-to-google-sheet">
                         <input type="text" name="Name" placeholder="Your Name" required>
                         <input type="email" name="Email" placeholder="Your Email" required>
                         <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
                         <button type="submit" class="btn btn2">Submit</button>
                     </form>
+
                 </div>
             </div>
         </div>
@@ -132,6 +131,7 @@
     <script>
         const scriptURL = 'https://script.google.com/macros/s/AKfycbz-WU9XNT8Lvbezu9T_apdJZHVGZnqEaon96w2tqdfGc_BWON7PknqH2dRVJ6TOv6ws/exec'
         const form = document.forms['submit-to-google-sheet']
+        const successMessage = document.getElementById('success-message');
 
         form.addEventListener('submit', e => {
             e.preventDefault()
@@ -139,7 +139,15 @@
                     method: 'POST',
                     body: new FormData(form)
                 })
-                .then(response => console.log('Success!', response))
+                .then(response => {
+                    console.log('Success!', response);
+                    const successMsg = document.getElementById("success-message");
+                    successMsg.style.display = "block";
+                    form.reset();
+                    setTimeout(function() {
+                        successMsg.style.display = "none";
+                    }, 1000); // Set the timeout to 3 seconds
+                })
                 .catch(error => console.error('Error!', error.message))
         })
     </script>
